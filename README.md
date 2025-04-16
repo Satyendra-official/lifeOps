@@ -112,9 +112,9 @@ lifeops/
 
 
 
-##  🙌 Contributions
+###  🙌 Contributions
 
     Pull requests, suggestions, and feedback are welcome! Let’s build something dope together.
 
-##  📄 License
+###  📄 License
     MIT License

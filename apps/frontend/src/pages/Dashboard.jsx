@@ -6,17 +6,21 @@ import Navbar from '../components/Navbar';
 export default function Dashboard() {
   const [tasks, setTasks] = useState([]);
   const [habits, setHabits] = useState([]);
+  const [user, setUser] = useState(null);  // State for logged-in user details
   const token = localStorage.getItem('token');
 
   const fetchData = async () => {
     const headers = { Authorization: `Bearer ${token}` };
-    const [tasksRes, habitsRes] = await Promise.all([
+    const [tasksRes, habitsRes, userRes] = await Promise.all([
       fetch('http://localhost:5000/api/tasks', { headers }),
       fetch('http://localhost:5000/api/habits', { headers }),
+      fetch('http://localhost:5000/api/users/me', { headers }), // New endpoint to fetch user data
     ]);
 
+    // Set the tasks, habits, and user data
     setTasks(await tasksRes.json());
     setHabits(await habitsRes.json());
+    setUser(await userRes.json());  // Assume the user endpoint returns user details
   };
 
   useEffect(() => {
@@ -26,6 +30,15 @@ export default function Dashboard() {
   return (
     <div className="p-8 space-y-6">
       <Navbar />
+
+      {/* Display logged-in user details */}
+      {user && (
+        <div className="mb-6 p-4 border rounded bg-blue-50">
+          <h3 className="text-lg font-semibold">Welcome, {user.name}!</h3>
+          <p className="text-sm">Email: {user.email}</p>
+        </div>
+      )}
+
       <TaskForm onCreated={fetchData} />
       <HabitForm onCreated={fetchData} />
 
