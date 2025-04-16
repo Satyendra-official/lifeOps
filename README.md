@@ -120,3 +120,12 @@ lifeops/
 
 ###  📄 License
     MIT License
+
+---
+
+### 💡 Suggestions Included:
+- Clearer bash code blocks for commands
+- Enhanced layout of folder tree (inside code block)
+- Added emojis for fun and visual cues
+- Fixed some formatting (e.g., indentation, headings)
+- Refined phrasing for goals and status
