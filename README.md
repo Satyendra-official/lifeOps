@@ -84,7 +84,7 @@ lifeops/
 
 ---
 
-## 🚀 Project Status
+### 🚀 Project Status
 
     ✅ Backend setup complete
     ✅ Frontend setup complete
@@ -97,7 +97,7 @@ lifeops/
     - Filtering + calendar visualization
 
 
-## 📌 Goals
+### 📌 Goals
 
 
     - 📋 Centralized task and habit management
