@@ -1,12 +1,12 @@
 # 🧠 LifeOps
 
-**LifeOps** is a personal operations system designed to help users manage tasks, track habits, automate routines, and boost productivity through smart integrations and a clean UI.
+**LifeOps** is a personal operations system to help you **manage tasks**, **track habits**, **automate routines**, and **boost productivity** through smart integrations and a sleek UI.
 
-This full-stack project is built with:
+Built as a full-stack monorepo with:
 
-- **Backend**: Node.js, Express, MongoDB
-- **Frontend**: React (Vite)
-- **Architecture**: Monorepo-style for clean separation and scalability
+- 🔧 **Backend**: Node.js, Express, MongoDB
+- 🎨 **Frontend**: React (Vite)
+- 🧱 **Architecture**: Modular monorepo for clean separation, reusability, and scalability
 
 ---
 
@@ -55,14 +55,14 @@ lifeops/
 ### Prerequisites
 
 - Node.js (v18+)
-- MongoDB instance (local or cloud)
+- MongoDB (local or cloud)
 
 ### Getting Started
 
 1. **Clone the repo:**
 
    ```bash
-   git clone https://github.com/your-username/lifeops.git
+   git clone https://github.com/Satyendra-official/lifeOps.git
    cd lifeops
 
 2. **Install Dependencies:**
@@ -74,20 +74,22 @@ lifeops/
 
     ```bash
     cd apps/backend
+    npm install
     node src/index.js
 
 4. **Start frontend:**
 
     ```bash
     cd apps/frontend
+    npm install
     npm run dev
 
 ---
 
 ### 🚀 Project Status
 
-    ✅ Backend setup complete
-    ✅ Frontend setup complete
+    ✅ Backend setup 
+    ✅ Frontend setup 
     🚧 Currently working on:
 
     - Task & habit management pages
@@ -102,7 +104,7 @@ lifeops/
 
     - 📋 Centralized task and habit management
 
-    - 📧 Smart email + calendar integrations
+    - 📧 Smart email & calendar integrations
 
     - 📅 Daily/weekly review automation
 
@@ -114,7 +116,7 @@ lifeops/
 
 ###  🙌 Contributions
 
-    Pull requests, suggestions, and feedback are welcome! Let’s build something dope together.
+    Pull requests, suggestions, and feedback are welcome! Let’s build something awesome together.
 
 ###  📄 License
     MIT License
