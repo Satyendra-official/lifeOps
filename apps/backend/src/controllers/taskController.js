@@ -73,30 +73,6 @@ export const updateTask = async (req, res) => {
 };
 
 
-// Update an existing task by ID
-// export const updateTask = async (req, res) => {
-//   const { id } = req.params;
-//   const { title, description, dueDate } = req.body;
-
-//   try {
-//     // Find the task by ID and userId to ensure the user can only update their own tasks
-//     const updatedTask = await Task.findOneAndUpdate(
-//       { _id: id, userId: req.userId },  // Filter by task id and user id
-//       { title, description, dueDate },  // Update fields
-//       { new: true }  // Return the updated document
-//     );
-
-//     // If no task was found to update
-//     if (!updatedTask) {
-//       return res.status(404).json({ message: 'Task not found or unauthorized' });
-//     }
-
-//     res.status(200).json(updatedTask);  // Return the updated task
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// };
-
 // Delete a task by ID
 export const deleteTask = async (req, res) => {
   const { id } = req.params;
