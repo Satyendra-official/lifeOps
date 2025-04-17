@@ -7,7 +7,6 @@ const JWT_SECRET = process.env.JWT_SECRET || 'supersecretkey';
 export const registerUser = async (req, res) => {
   try {
 
-    console.log("inside register ")
     const { name, email, password } = req.body;
     const exists = await User.findOne({ email });
     if (exists) return res.status(400).json({ message: 'User already exists' });
