@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
@@ -15,7 +15,7 @@ export default function Register() {
     const data = await res.json();
     if (data.token) {
       localStorage.setItem('token', data.token);
-      navigate('/');
+      navigate('/dashboard');
     }
   };
 
@@ -45,9 +45,11 @@ export default function Register() {
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
         <button className="bg-green-600 text-white px-4 py-2 rounded w-full">Register</button>
-        <p className='text-black-800 font-light'>If already Registered <a href="/login" className='text-blue-900'>Login</a></p>
+        <p className='text-black-800 font-light'>If already Registered <Link to="/login" className='text-blue-900'>Login</Link> </p>
 
       </form>
     </div>
   );
 }
+{/* <Link to="/dashboard" className="hover:underline">Dashboard</Link> */}
+{/* <a href="/" className='text-blue-900'>Login</a> */}

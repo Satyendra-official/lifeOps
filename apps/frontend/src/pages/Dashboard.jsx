@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+// import { Link } from 'react-router-dom';
 import TaskForm from '../components/TaskForm';
 import HabitForm from '../components/HabitForm';
 import Navbar from '../components/Navbar';
@@ -30,6 +31,16 @@ export default function Dashboard() {
   return (
     <div className="p-8 space-y-6">
       <Navbar />
+
+       {/* 🔵 Home Button
+       <div className="mb-4">
+        <Link
+          to="/"
+          className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+        >
+          ⬅ Back to Home
+        </Link>
+      </div> */}
 
       {/* Display logged-in user details */}
       {user && (

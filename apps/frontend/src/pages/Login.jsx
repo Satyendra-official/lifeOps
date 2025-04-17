@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -28,7 +28,7 @@ export default function Login() {
       // If login is successful and a token is received
       if (data.token) {
         localStorage.setItem('token', data.token);  // Store the token in localStorage
-        navigate('/');  // Navigate to the home page or dashboard
+        navigate('/dashboard');  // Navigate to the home page or dashboard
       } else {
         // If no token is returned, display an error (e.g., invalid credentials)
         alert('Invalid credentials. Please try again.');
@@ -59,7 +59,7 @@ export default function Login() {
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
         <button className="bg-blue-600 text-white px-4 py-2 rounded w-full">Login</button>
-        <p className='text-black-800 font-light'>If not Registered <a href="/register" className='text-blue-900'>Click here.</a></p>
+        <p className='text-black-800 font-light'>If not Registered <Link to="/register" className='text-blue-900'>Register</Link></p>
       </form>
     </div>
   );
