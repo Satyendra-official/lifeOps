@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
+const API_BASE = import.meta.env.VITE_API_URL;
+
 
 export default function Habits() {
   const [habits, setHabits] = useState([]);
@@ -8,7 +10,7 @@ export default function Habits() {
   const [form, setForm] = useState({ title: '', frequency: '' });
 
   const fetchHabits = async () => {
-    const res = await fetch('http://localhost:5000/api/habits', {
+    const res = await fetch('${API_BASE}/api/habits', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     });
     const data = await res.json();
@@ -22,7 +24,7 @@ export default function Habits() {
 
   const handleDelete = async (id) => {
     // console.log(id)
-    await fetch(`http://localhost:5000/api/habits/${id}`, {
+    await fetch(`${API_BASE}/api/habits/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     });
@@ -31,7 +33,7 @@ export default function Habits() {
 
   const handleEditSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:5000/api/habits/${editingHabit._id}`, {
+    await fetch(`${API_BASE}/api/habits/${editingHabit._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

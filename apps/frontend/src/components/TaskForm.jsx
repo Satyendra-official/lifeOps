@@ -1,4 +1,6 @@
 import { useState } from 'react';
+const API_BASE = import.meta.env.VITE_API_URL;
+
 
 export default function TaskForm({ onCreated }) {
   const [task, setTask] = useState({
@@ -11,7 +13,7 @@ export default function TaskForm({ onCreated }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const res = await fetch('http://localhost:5000/api/tasks', {
+    const res = await fetch(`${API_BASE}/api/tasks`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

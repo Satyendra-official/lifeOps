@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import TaskForm from '../components/TaskForm';
 import HabitForm from '../components/HabitForm';
 import Navbar from '../components/Navbar';
+const API_BASE = import.meta.env.VITE_API_URL;
+
 
 export default function Dashboard() {
   const [tasks, setTasks] = useState([]);
@@ -13,9 +15,9 @@ export default function Dashboard() {
   const fetchData = async () => {
     const headers = { Authorization: `Bearer ${token}` };
     const [tasksRes, habitsRes, userRes] = await Promise.all([
-      fetch('http://localhost:5000/api/tasks', { headers }),
-      fetch('http://localhost:5000/api/habits', { headers }),
-      fetch('http://localhost:5000/api/users/me', { headers }), // New endpoint to fetch user data
+      fetch(`${API_BASE}/api/tasks`, { headers }),
+      fetch(`${API_BASE}/api/habits`, { headers }),
+      fetch(`${API_BASE}/api/users/me`, { headers }), // New endpoint to fetch user data
     ]);
 
     // Set the tasks, habits, and user data

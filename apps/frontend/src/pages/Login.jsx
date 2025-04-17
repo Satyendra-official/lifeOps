@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+const API_BASE = import.meta.env.VITE_API_URL;
+
 
 export default function Login() {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -10,7 +12,7 @@ export default function Login() {
     
     try {
       // Send a POST request to the login API
-      const res = await fetch('http://localhost:5000/api/users/login', {
+      const res = await fetch(`${API_BASE}/api/users/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

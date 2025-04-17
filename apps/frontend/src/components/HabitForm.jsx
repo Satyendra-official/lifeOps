@@ -1,11 +1,12 @@
 import { useState } from 'react';
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export default function HabitForm({ onCreated }) {
   const [habit, setHabit] = useState({ name: '', frequency: 'daily' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:5000/api/habits', {
+    const res = await fetch(`${API_BASE}/api/habits`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
