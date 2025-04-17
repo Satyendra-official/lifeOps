@@ -8,20 +8,6 @@ import Habits from './pages/Habits';
 import LandingPage from './pages/LandingPage';
 
 
-
-
-// function App() {
-//   const [isAuth, setIsAuth] = useState(false);
-
-//   // Set the authentication state based on the token
-//   useEffect(() => {
-//     const token = localStorage.getItem('token');
-//     setIsAuth(!!token); // Set the auth state based on token presence
-//   }, []);
-
-  // const isAuth = localStorage.getItem('token');
-
-
   function App() {
     const [isAuth, setIsAuth] = useState(null);  // Set initial state to null to check for token
   
