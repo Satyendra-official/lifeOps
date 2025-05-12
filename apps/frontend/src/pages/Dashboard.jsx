@@ -34,16 +34,6 @@ export default function Dashboard() {
     <div className="p-8 space-y-6">
       <Navbar />
 
-       {/* 🔵 Home Button
-       <div className="mb-4">
-        <Link
-          to="/"
-          className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-        >
-          ⬅ Back to Home
-        </Link>
-      </div> */}
-
       {/* Display logged-in user details */}
       {user && (
         <div className="mb-6 p-4 border rounded bg-blue-50">

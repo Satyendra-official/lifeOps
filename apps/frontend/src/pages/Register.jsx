@@ -53,5 +53,3 @@ export default function Register() {
     </div>
   );
 }
-{/* <Link to="/dashboard" className="hover:underline">Dashboard</Link> */}
-{/* <a href="/" className='text-blue-900'>Login</a> */}
